@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block title %}Create Gig - FreelanceHub{% endblock %}
+
+{% block content %}
+<div class="gig-form-container">
+  <h2>Create a New Gig</h2>
+  <form method="POST" enctype="multipart/form-data" class="gig-form">
+    {% csrf_token %}
+    
+    <div class="form-group">
+      <label for="title">Gig Title</label>
+      <input type="text" id="title" name="title" maxlength="100" required>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="5" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <select id="category" name="category" required>
+        <option value="">Select a category</option>
+        <option value="WD">Web Development</option>
+        <option value="GD">Graphic Design</option>
+        <option value="WR">Writing & Translation</option>
+        <option value="DM">Digital Marketing</option>
+        <option value="VA">Virtual Assistant</option>
+        <option value="VO">Voice Over</option>
+        <option value="SE">SEO</option>
+        <option value="DA">Data Analysis</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price (USD)</label>
+      <input type="number" id="price" name="price" step="0.01" min="0" required>
+    </div>
+
+    <div class="form-group">
+      <label for="image">Gig Image</label>
+      <input type="file" id="image" name="image" accept="image/*">
+    </div>
+
+    <button type="submit" class="btn-green">Publish Gig</button>
+  </form>
+</div>
+{% endblock %}

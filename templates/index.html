@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreelanceHub</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">FreelanceHub</div>
+      <ul class="nav-links">
+        <li><a href="#">Explore</a></li>
+        <li class="seller-callout" ><a href="{% url 'users:register' %}" style="color: #1dbf73">Become a Seller</a></li>
+        <li><a href="{% url 'users:login' %}">Sign In</a></li>
+        <li><a href="#" class="btn">Join</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Find the perfect freelance services for your business</h1>
+      <form class="search-bar">
+        <input type="text" placeholder="Try 'logo design'" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </header>
+
+  <section class="trusted">
+    <p>Trusted by:</p>
+    <div class="brands">
+      <img src="brand1.png" alt="Brand 1" />
+      <img src="brand2.png" alt="Brand 2" />
+      <img src="brand3.png" alt="Brand 3" />
+    </div>
+  </section>
+
+  <section class="categories">
+    <h2>Popular Services</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="logo-design.jpg" alt="Logo Design" />
+        <p>Logo Design</p>
+      </div>
+      <div class="card">
+        <img src="seo.jpg" alt="SEO" />
+        <p>SEO Services</p>
+      </div>
+      <div class="card">
+        <img src="voice-over.jpg" alt="Voice Over" />
+        <p>Voice Over</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 FreelanceHub. All rights reserved.</p>
+  </footer>
+</body>
+</html>

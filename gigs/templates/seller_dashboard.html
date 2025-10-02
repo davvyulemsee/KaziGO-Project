@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block title %}Seller Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+  <h2 class="dashboard-heading">Your Task Requests</h2>
+
+  {% if tasks %}
+    <div class="task-grid">
+      {% for task in tasks %}
+        <div class="task-card">
+          <div class="task-header">
+            <span class="task-category">{{ task.category }}</span>
+            <span class="task-date">{{ task.created_at|date:"M d, Y" }}</span>
+          </div>
+          <div class="task-body">
+            <p><strong>Location:</strong> {{ task.location }}</p>
+            <p><strong>Details:</strong> {{ task.details|truncatewords:20 }}</p>
+          </div>
+          <div class="task-footer">
+            <a href="#" class="btn-view">View</a>
+            <a href="#" class="btn-accept">Accept</a>
+            <a href="#" class="btn-decline">Decline</a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="no-tasks">No task requests yet. Once clients submit tasks, they’ll appear here.</p>
+  {% endif %}
+</div>
+{% endblock %}

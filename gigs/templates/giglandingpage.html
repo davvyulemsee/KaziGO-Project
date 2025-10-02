@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}Explore Gigs{% endblock %}
+
+{% block content %}
+<div class="gigs-page">
+  <div class="hero-section">
+  <h1 class="hero-heading">Find Help for Everyday Tasks</h1>
+  <p class="hero-subheading">From cleaning to tech support, get matched with trusted local taskers.</p>
+</div>
+
+  <div class="search-bar">
+    <form method="GET" action="">
+      <input type="text" name="q" placeholder="What are you looking for?" />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <div class="hero-image-section">
+  <img src="{% static 'images/hero-banner.jpg' %}" alt="Task help banner" class="hero-banner" />
+  <div class="hero-description">
+    <h2>Need a hand with something?</h2>
+    <p>From cleaning and moving to tech support and errands, get matched with trusted local taskers ready to help.</p>
+  </div>
+</div>
+
+
+<div class="gigs-grid">
+  {% for code, name in categories.items %}
+  <div class="gig-card">
+    <a href="{% url 'gigs:gigs_by_category' code %}">
+  {% with image_path='images/categories/'|add:code|add:'.jpg' %}
+    <img src="{% static image_path %}" alt="{{ name }}"
+         onerror="this.onerror=null;this.src='{% static 'images/categories/fallback.jpg' %}';" />
+  {% endwith %}
+</a>
+<div class="gig-info">
+  <a href="{% url 'gigs:gigs_by_category' code %}">
+    <h3>{{ name }}</h3>
+  </a>
+  <p>Need help with {{ name|lower }}? Click to explore available gigs.</p>
+</div>
+
+  </div>
+{% endfor %}
+</div>
+
+</div>
+{% endblock %}

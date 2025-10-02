@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}{{ gig.title }} - FreelanceHub{% endblock %}
+
+{% block content %}
+<div class="gig-detail-page">
+  <div class="gig-hero">
+    <img src="{{ gig.image.url }}" alt="{{ gig.title }}" class="gig-main-image" />
+    <div class="gig-info">
+      <h1 class="gig-title">{{ gig.title }}</h1>
+      <div class="seller-profile">
+        {% if gig.seller.profile.avatar %}
+          <img src="{{ gig.seller.profile.avatar.url }}" alt="{{ gig.seller.username }}" class="avatar" />
+        {% else %}
+          <img src="{% static 'images/default-avatar.jpg' %}" alt="Default avatar" class="avatar" />
+        {% endif %}
+        <div>
+          <p class="seller-name">{{ gig.seller.username }}</p>
+          <p class="category">{{ gig.get_category_display }}</p>
+        </div>
+      </div>
+      <div class="gig-meta">
+        <span class="price">${{ gig.price }}</span>
+        <span class="delivery-time">Delivery: 3 Days</span> <!-- Static for now -->
+      </div>
+    </div>
+  </div>
+
+  <div class="gig-description">
+    <h2>About This Gig</h2>
+    <p>{{ gig.description }}</p>
+  </div>
+
+  <div class="gig-reviews">
+    <h2>Reviews</h2>
+    <p>No reviews yet.</p> <!-- Placeholder -->
+  </div>
+
+  <button class="contact-button" onclick="openChat()">Contact Seller</button>
+<a href="{% url 'gigs:submit_task' gig.category gig.seller.id %}" class="book-button">Book Now</a>
+</div>
+
+<script>
+  function openChat() {
+    // Placeholder for future chat interface
+    alert("Chat interface coming soon!");
+  }
+</script>
+{% endblock %}

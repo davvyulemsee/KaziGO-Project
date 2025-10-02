@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}
+{{ category_name }}
+Gigs
+{% endblock %}
+
+{% block content %}
+<div class="gigs-page">
+  <h2>{{ category_name }}</h2>
+  <div class="gigs-grid">
+    {% for gig in gigs %}
+    <a href="{% url 'gigs:gig_detail' gig.slug %}">
+      <div class="gig-card">
+        <img src="{{ gig.image.url }}" alt="{{ gig.title }}">
+        <div class="gig-info">
+          <h3>{{ gig.title }}</h3>
+          <p>{{ gig.description|truncatewords:20 }}</p>
+          <p><strong>${{ gig.price }}</strong></p>
+        </div>
+      </div>
+    {% empty %}
+      <p>No gigs available in this category yet.</p>
+      </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
