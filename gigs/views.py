@@ -96,6 +96,10 @@ def submit_task(request, category_code, seller_id):
     })
 
 
+
+
+
+
 def gigs_by_category(request, code):
     gigs = Gig.objects.filter(category=code)
     category_name = dict(Gig.CATEGORY_CHOICES).get(code, 'Unknown Category')
