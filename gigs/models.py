@@ -5,14 +5,14 @@ from django.conf import settings
 
 class Gig(models.Model):
     CATEGORY_CHOICES = [
-        ('WD', 'Web Development'),
-        ('GD', 'Graphic Design'),
-        ('WR', 'Writing & Translation'),
-        ('DM', 'Digital Marketing'),
+        ('EL', 'Electrician'),
+        ('PB', 'Plumbing repairs'),
+        ('MV', 'Moving'),
+        ('GD', 'Gardening'),
+        ('CL', 'Cleaning'),
+        ('CP', 'Carpentry'),
+        ('HR', 'Home Repairs'),
         ('VA', 'Virtual Assistant'),
-        ('VO', 'Voice Over'),
-        ('SE', 'SEO'),
-        ('DA', 'Data Analysis'),
     ]
 
     seller = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='gigs')
