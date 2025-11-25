@@ -44,5 +44,18 @@
 {% endfor %}
 </div>
 
+  <!-- NEW: Large Hero Section Before Footer (TaskRabbit Style) -->
+  <section class="pre-footer-hero">
+    <div class="pre-footer-content">
+      <h2>Ready to start earning on KaziGo?</h2>
+      <p>Join thousands of skilled taskers helping people every day.<br>Earn money on your own schedule, doing what you love.</p>
+      <div class="pre-footer-buttons">
+        <a href="{% url 'gigs:create_gig' %}" class="btn-green btn-large">Become a Tasker</a>
+        <a href="#" class="btn-white">Learn More</a>
+      </div>
+    </div>
+    <img src="{% static 'images/become-tasker.jpg' %}" alt="Become a tasker" class="pre-footer-image" />
+  </section>
+
 </div>
 {% endblock %}
