@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-ho!jha2cdir=5&zj1oxpb(dlsz72wvqfz_653--o^og1$$hnz1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kazigo-project-production.up.railway.app']
+ALLOWED_HOSTS = ['kazigo-project-production.up.railway.app', '127.0.0.1']
 
 
 # Application definition
