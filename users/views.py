@@ -38,3 +38,8 @@ def login_view(request):
     else:
         form = AuthenticationForm(request=request)
     return render(request, 'users/login.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+
+    return redirect(reverse('gigs:all_gigs'))

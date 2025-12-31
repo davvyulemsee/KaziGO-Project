@@ -8,6 +8,17 @@
   <link rel="stylesheet" href="{% static 'css/login.css' %}" />
 </head>
 <body>
+
+<nav class="navbar">
+    <div class="nav-left">
+      <a href="{% url 'gigs:all_gigs' %}" class="logo">kazigo project</a>
+    </div>
+    <div class="nav-right">
+
+    <a href="{% url 'users:register' %}" class="nav-link">Sign Up</a>
+</div>
+  </nav>
+
   <div class="container">
     <div class="form-box">
       <h2>Welcome Back</h2>

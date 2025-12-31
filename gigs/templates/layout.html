@@ -21,8 +21,7 @@
       <a href="{% url 'gigs:create_gig' %}" class="btn-green">+ New Gig</a>
 
     {% endif %}
-    <a href="{% url 'gigs:create_gig' %}" class="btn-green">+ New Gig</a>
-    <a href="/" class="nav-link">Logout</a>
+    <a href="{% url 'users:logout' %}" class="nav-link">Logout</a>
   {% else %}
     <a href="{% url 'gigs:create_gig' %}" class="btn-green btn-large">Become a Tasker</a>
     <a href="{% url 'users:login' %}" class="nav-link">Login</a>
