@@ -28,6 +28,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['kazigo-project-production.up.railway.app', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://kazigo-project-production.up.railway.app",
+]
+
 
 # Application definition
 
